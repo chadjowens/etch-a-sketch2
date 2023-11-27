@@ -1,5 +1,6 @@
 let color = "black";
 let click = false;
+document.querySelector('.error').style.display = 'none';
 
 
 function populateBoard(size) {
@@ -25,9 +26,11 @@ populateBoard(16)
 
 function changeSize(input) {
     if (input >= 2 && input <= 100) {
+        document.querySelector('.error').style.display = 'none';
         populateBoard(input);
     } else {
         console.log("too much or not enough!!!");
+        document.querySelector('.error').style.display = 'flex';
     }
 }
 
